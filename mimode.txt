@@ -3,7 +3,7 @@ enable_rule_generator=true
 overwrite_original_rules=true
 
 ; 基础规则模板路径（可以改成你自己的）
-clash_rule_base=https://github.com/kzwuy/mode-clash/blob/main/mode.yml
+clash_rule_base=https://gcore.jsdelivr.net/gh/kzwuy/mode-clash@refs/heads/main/mode.yml
 
 ; 策略组定义（保留原 proxy-group 中的 Proxy）
 custom_proxy_group=Proxy`select`.*`[]DIRECT
