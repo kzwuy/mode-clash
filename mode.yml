@@ -1,53 +1,75 @@
-mixed-port: 7890
-allow-lan: true
-bind-address: "*"
-mode: rule
-log-level: info
-external-controller: "127.0.0.1:9090"
-sniffer:
-  enable: true
-  sniff:
-    HTTP:
-      ports: [80, 8080-8880]
-      override-destination: true
-    TLS:
-      ports: [80, 443, 8443]
-    QUIC:
-      ports: [443, 8443]
-  force-domain:
-    - "+.v2ex.com"
-  skip-domain:
-    - "+.baidu.com"
-  sniffing:
-    - tls
-    - http
-dns:
-  enable: true
-  ipv6: false
-  default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  use-hosts: true
-  nameserver:
-    - 8.8.8.8
-    - 114.114.114.114
-    - https://dns.alidns.com/dns-query
-  fallback:
-    - https://doh.dns.sb/dns-query#Proxy
-    - https://dns.cloudflare.com/dns-query#Proxy
-    - https://dns.twnic.tw/dns-query#Proxy
-    - tls://8.8.4.4:853#Proxy
-  fallback-filter:
-  geoip: true
-  ipcidr:
-    - 240.0.0.0/4
-    - 0.0.0.0/32
-Proxy:
-
-Proxy Group:
-
-rule-providers:
-
-Rule:
+{
+    "mixed-port": 7890,
+    "allow-lan": true,
+    "bind-address": "*",
+    "mode": "rule",
+    "log-level": "info",
+    "external-controller": "127.0.0.1:9090",
+    "sniffer": {
+        "enable": true,
+        "sniff": {
+            "HTTP": {
+                "ports": [
+                    80,
+                    "8080-8880"
+                ],
+                "override-destination": true
+            },
+            "TLS": {
+                "ports": [
+                    80,
+                    443,
+                    8443
+                ]
+            },
+            "QUIC": {
+                "ports": [
+                    443,
+                    8443
+                ]
+            }
+        },
+        "force-domain": [
+            "+.v2ex.com"
+        ],
+        "skip-domain": [
+            "+.baidu.com"
+        ],
+        "sniffing": [
+            "tls",
+            "http"
+        ]
+    },
+    "dns": {
+        "enable": true,
+        "ipv6": false,
+        "default-nameserver": [
+            "223.5.5.5",
+            "119.29.29.29"
+        ],
+        "enhanced-mode": "fake-ip",
+        "fake-ip-range": "198.18.0.1/16",
+        "use-hosts": true,
+        "nameserver": [
+            "8.8.8.8",
+            "114.114.114.114",
+            "https://dns.alidns.com/dns-query"
+        ],
+        "fallback": [
+            "https://doh.dns.sb/dns-query#Proxy",
+            "https://dns.cloudflare.com/dns-query#Proxy",
+            "https://dns.twnic.tw/dns-query#Proxy",
+            "tls://8.8.4.4:853#Proxy"
+        ],
+        "fallback-filter": null,
+        "geoip": true,
+        "ipcidr": [
+            "240.0.0.0/4",
+            "0.0.0.0/32"
+        ]
+    },
+    "Proxy": 
+    "Proxy Group": 
+    "rule-providers": 
+    "Rule": 
+}
