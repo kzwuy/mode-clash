@@ -3,30 +3,9 @@ enable_rule_generator=true
 overwrite_original_rules=true
 
 ; 基础规则模板路径（可以改成你自己的）
-clash_rule_base=https://gcore.jsdelivr.net/gh/kzwuy/mode-clash@refs/heads/main/mode.yml
+clash_rule_base=https://gcore.jsdelivr.net/gh/kzwuy/mode-clash@571b92ac549bf0bd422ae8e5b236c1154a65cd14/mode.yml
 
 ; 策略组定义（保留原 proxy-group 中的 Proxy）
 custom_proxy_group=Proxy`select`.*`
 
-; 以下为规则集定义，名称来自规则文件名（无 emoji，无描述）
-ruleset=DIRECT,youbianku.com|shuerte.com|jxgame.net
-ruleset=DIRECT,https://gcore.jsdelivr.net/gh/ACL4SSR/ACL4SSR/Clash/ChinaIpV6.list
-ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
-ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
-ruleset=DIRECT,https://ruleset.skk.moe/Clash/non_ip/direct.txt
-ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
-ruleset=DIRECT,https://ruleset.skk.moe/Clash/non_ip/apple_cn.txt
-ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
-ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
-ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
-ruleset=DIRECT,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
-ruleset=DIRECT,https://ruleset.skk.moe/Clash/non_ip/lan.txt
-ruleset=REJECT,https://ruleset.skk.moe/Clash/non_ip/reject.txt
-ruleset=REJECT,https://ruleset.skk.moe/Clash/domainset/reject.txt
-ruleset=REJECT,https://ruleset.skk.moe/Clash/non_ip/reject-drop.txt
-ruleset=REJECT,https://ruleset.skk.moe/Clash/non_ip/reject-no-drop.txt
-ruleset=Proxy,https://ruleset.skk.moe/Clash/non_ip/telegram.txt
-ruleset=Proxy,https://ruleset.skk.moe/Clash/ip/telegram.txt
-ruleset=Proxy,https://ruleset.skk.moe/Clash/non_ip/ai.txt
-ruleset=Proxy,https://ruleset.skk.moe/Clash/non_ip/stream.txt
-ruleset=Proxy,https://ruleset.skk.moe/Clash/ip/stream.txt
+
