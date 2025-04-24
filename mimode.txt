@@ -1,6 +1,7 @@
 [custom]
 enable_rule_generator=flase
 overwrite_original_rules=true
+add_emoji=false
 
 ; 基础规则模板路径（可以改成你自己的）
 clash_rule_base=https://gcore.jsdelivr.net/gh/kzwuy/mode-clash@7045208077a98b09ed3bcec71ff52ec8c0d4c4a6/mode.yml
