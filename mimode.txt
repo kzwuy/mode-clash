@@ -6,7 +6,7 @@ overwrite_original_rules=true
 clash_rule_base=https://gcore.jsdelivr.net/gh/kzwuy/mode-clash@refs/heads/main/mode.yml
 
 ; 策略组定义（保留原 proxy-group 中的 Proxy）
-custom_proxy_group=Proxy`select`.*`[]DIRECT
+custom_proxy_group=Proxy`select`.*`
 
 ; 以下为规则集定义，名称来自规则文件名（无 emoji，无描述）
 ruleset=DIRECT,youbianku.com|shuerte.com|jxgame.net
