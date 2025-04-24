@@ -3,7 +3,7 @@ enable_rule_generator=flase
 overwrite_original_rules=true
 
 ; 基础规则模板路径（可以改成你自己的）
-clash_rule_base=https://gcore.jsdelivr.net/gh/kzwuy/mode-clash@571b92ac549bf0bd422ae8e5b236c1154a65cd14/mode.yml
+clash_rule_base=https://gcore.jsdelivr.net/gh/kzwuy/mode-clash@7045208077a98b09ed3bcec71ff52ec8c0d4c4a6/mode.yml
 
 ; 策略组定义（保留原 proxy-group 中的 Proxy）
 custom_proxy_group=Proxy`select`.*`
