@@ -39,23 +39,11 @@ dns:
     - https://dns.cloudflare.com/dns-query#Proxy
     - https://dns.twnic.tw/dns-query#Proxy
     - tls://8.8.4.4:853#Proxy
-  fallback-filter:
   geoip: true
   ipcidr:
     - 240.0.0.0/4
     - 0.0.0.0/32
 Proxy:
-  - name: "1"
-    type: ss
-    server: 1.2.4.8
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: "password"
-    # udp: true
 
 Proxy Group:
-  - { name: "Proxy", type: select, proxies: ["1", "2", "3","4"] }
-
-rule-providers:
-
 Rule:
