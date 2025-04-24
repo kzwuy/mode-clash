@@ -1,49 +1,230 @@
 mixed-port: 7890
 allow-lan: true
-bind-address: "*"
+bind-address: '*'
 mode: rule
 log-level: info
-external-controller: "127.0.0.1:9090"
+external-controller: 127.0.0.1:9090
 sniffer:
   enable: true
   sniff:
     HTTP:
-      ports: [80, 8080-8880]
+      ports:
+      - 80
+      - 8080-8880
       override-destination: true
     TLS:
-      ports: [80, 443, 8443]
+      ports:
+      - 80
+      - 443
+      - 8443
     QUIC:
-      ports: [443, 8443]
+      ports:
+      - 443
+      - 8443
   force-domain:
-    - "+.v2ex.com"
+  - +.v2ex.com
   skip-domain:
-    - "+.baidu.com"
+  - +.baidu.com
   sniffing:
-    - tls
-    - http
+  - tls
+  - http
 dns:
   enable: true
   ipv6: false
   default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+  - 223.5.5.5
+  - 119.29.29.29
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   use-hosts: true
   nameserver:
-    - 8.8.8.8
-    - 114.114.114.114
-    - https://dns.alidns.com/dns-query
+  - 8.8.8.8
+  - 114.114.114.114
+  - https://dns.alidns.com/dns-query
   fallback:
-    - https://doh.dns.sb/dns-query#Proxy
-    - https://dns.cloudflare.com/dns-query#Proxy
-    - https://dns.twnic.tw/dns-query#Proxy
-    - tls://8.8.4.4:853#Proxy
+  - https://doh.dns.sb/dns-query#Proxy
+  - https://dns.cloudflare.com/dns-query#Proxy
+  - https://dns.twnic.tw/dns-query#Proxy
+  - tls://8.8.4.4:853#Proxy
   geoip: true
   ipcidr:
-    - 240.0.0.0/4
-    - 0.0.0.0/32
-Proxy:
-
-Proxy Group:
-Rule:
+  - 240.0.0.0/4
+  - 0.0.0.0/32
+rule-providers:
+  direct_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/direct.txt
+    path: ./sukkaw_ruleset/direct_non_ip.txt
+  reject_non_ip_no_drop:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/reject-no-drop.txt
+    path: ./sukkaw_ruleset/reject_non_ip_no_drop.txt
+  stream_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/stream.txt
+    path: ./sukkaw_ruleset/stream_non_ip.txt
+  reject_non_ip_drop:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/reject-drop.txt
+    path: ./sukkaw_ruleset/reject_non_ip_drop.txt
+  apple_cn_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/apple_cn.txt
+    path: ./sukkaw_ruleset/apple_cn_non_ip.txt
+  reject_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/reject.txt
+    path: ./sukkaw_ruleset/reject_non_ip.txt
+  reject_domainset:
+    type: http
+    behavior: domain
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/domainset/reject.txt
+    path: ./sukkaw_ruleset/reject_domainset.txt
+  ai_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/ai.txt
+    path: ./sukkaw_ruleset/ai_non_ip.txt
+  telegram_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/telegram.txt
+    path: ./sukkaw_ruleset/telegram_non_ip.txt
+  lan_non_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/non_ip/lan.txt
+    path: ./sukkaw_ruleset/lan_non_ip.txt
+  telegram_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/ip/telegram.txt
+    path: ./sukkaw_ruleset/telegram_ip.txt
+  stream_ip:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://ruleset.skk.moe/Clash/ip/stream.txt
+    path: ./sukkaw_ruleset/stream_ip.txt
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+    path: ./ACL4SSR/LocalAreaNetwork.list
+  UnBan:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
+    path: ./ACL4SSR/UnBan.list
+  ChinaDomain:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+    path: ./ACL4SSR/ChinaDomain.list
+  ChinaMedia:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list
+    path: ./ACL4SSR/ChinaMedia.list
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./ACL4SSR/ChinaCompanyIp.list
+  ChinaIp:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
+    path: ./ACL4SSR/ChinaIp.list
+  ChinaipV6:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://gcore.jsdelivr.net/gh/ACL4SSR/ACL4SSR/Clash/ChinaIpV6.list
+    path: ./ACL4SSR/ChinaipV6.list
+  GoogleCN:
+    type: http
+    behavior: classical
+    format: text
+    interval: 43200
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+    path: ./ACL4SSR/GoogleCNProxyIP.list
+rules:
+- DOMAIN-SUFFIX,youbianku.com,DIRECT
+- DOMAIN,shuerte.com,DIRECT
+- DOMAIN,jxgame.net,DIRECT
+- RULE-SET,ChinaipV6,DIRECT
+- RULE-SET,GoogleCN,Proxy
+- RULE-SET,LocalAreaNetwork,DIRECT
+- RULE-SET,direct_non_ip,DIRECT
+- RULE-SET,UnBan,DIRECT
+- RULE-SET,apple_cn_non_ip,DIRECT
+- RULE-SET,ChinaDomain,DIRECT
+- RULE-SET,ChinaMedia,DIRECT
+- RULE-SET,ChinaCompanyIp,DIRECT
+- RULE-SET,ChinaIp,DIRECT
+- RULE-SET,lan_non_ip,DIRECT
+- IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- IP-CIDR6,fc00::/7,DIRECT,no-resolve
+- IP-CIDR6,fe80::/10,DIRECT,no-resolve
+- RULE-SET,reject_non_ip,REJECT
+- RULE-SET,reject_domainset,REJECT
+- RULE-SET,reject_non_ip_drop,REJECT-DROP
+- RULE-SET,reject_non_ip_no_drop,REJECT
+- RULE-SET,telegram_non_ip,Proxy
+- RULE-SET,ai_non_ip,Proxy
+- RULE-SET,stream_non_ip,Proxy
+- RULE-SET,stream_ip,Proxy
+- RULE-SET,telegram_ip,Proxy
+- GEOIP,CN,DIRECT
+- MATCH,Proxy
