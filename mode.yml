@@ -208,6 +208,8 @@ tun:
   auto-route: true
   auto-redirect: true
   auto-detect-interface: true
+  
+proxyies:
 
 proxy-groups:
   - name：Proxy
