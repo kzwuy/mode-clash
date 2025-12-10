@@ -209,9 +209,7 @@ tun:
   auto-redirect: true
   auto-detect-interface: true
 
-proxy-providers:
-
-proxies:
+proxies+:
 
 proxy-groups:
 
