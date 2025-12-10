@@ -209,9 +209,10 @@ tun:
   auto-redirect: true
   auto-detect-interface: true
 
-proxies+:
-
 proxy-groups:
+  - name：Proxy
+    include-all: true
+    type: select
 
 
 rule-providers:
