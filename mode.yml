@@ -215,8 +215,12 @@ proxy-groups:
   - name：Proxy
     include-all: true
     type: select
-
-
+    proxies:
+      - use
+  - name: use
+    include-all: true
+    type: select
+    
 rule-providers:
   reject_non_ip_no_drop:
     type: http
