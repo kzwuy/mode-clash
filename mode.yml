@@ -1,8 +1,8 @@
 proxy-groups:
   - name: Proxy
-    include-all: true
     type: select
-    
+    include-all: true
+
 rule-providers:
   reject_non_ip_no_drop:
     type: http
