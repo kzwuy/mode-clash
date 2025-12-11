@@ -150,7 +150,7 @@ rules:
   - DOMAIN-SUFFIX,ypojie.com,DIRECT
   - DOMAIN,pan.nomilu.cc.cd,DIRECT
   - DOMAIN,axutongxue.com,DIRECT
-  -  DOMAIN,mymilu.cc.cd,HK
+  - DOMAIN,mymilu.cc.cd,Proxy
   - DOMAIN,cc.cd,DIRECT
   - DOMAIN-SUFFIX,gddns.org,DIRECT
   - DOMAIN-SUFFIX,cstonecloud.com,DIRECT
@@ -162,7 +162,6 @@ rules:
   - DOMAIN-SUFFIX,okemby.org,Proxy
   - DOMAIN-SUFFIX,roblox.com,Proxy
   - DOMAIN,1.vyunyun.top,Proxy
-  - DOMAIN,release-assets.githubusercontent.com,JP
   - RULE-SET,reject_domainset,REJECT
   - RULE-SET,cdn_domainset,Proxy
   - RULE-SET,game-download,Proxy
@@ -173,7 +172,7 @@ rules:
   - RULE-SET,reject_non_ip_no_drop,REJECT
   - RULE-SET,lan_non_ip,DIRECT
   - RULE-SET,apple_cn_non_ip,DIRECT
-  - RULE-SET,ai_non_ip,维云云GPT
+  - RULE-SET,ai_non_ip,Proxy
   - RULE-SET,apple_intelligence_non_ip,Proxy
   - RULE-SET,direct,DIRECT
   - RULE-SET,stream_non_ip,Proxy
