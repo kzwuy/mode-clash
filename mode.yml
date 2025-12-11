@@ -1,5 +1,5 @@
 proxy-groups:
-  - name：Proxy
+  - name: Proxy
     include-all: true
     type: select
     
